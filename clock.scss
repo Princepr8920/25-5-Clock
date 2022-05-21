@@ -1,0 +1,479 @@
+@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@434;500&display=swap);
+
+* {
+  font-family: comfortaa, monospace, "Franklin Gothic Medium", "Arial Narrow",
+    Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  height: 100%;
+  position: absolute;
+}
+
+// for dark mode
+
+.dark {
+  background: black;
+  #allControls {
+    color: white;
+  }
+  .fa-home-alt,
+  .fa-cog,
+  .fa-sun,
+  .fa-bell,
+  .dark-mode {
+    color: white;
+  }
+  .scroll:hover i {
+    background: rgb(31, 31, 31);
+  }
+  .activate {
+    color: rgb(5, 95, 24);
+  }
+  .Alerts:hover {
+    background: rgb(19, 18, 18);
+  }
+}
+
+// for light mode
+
+.light {
+  background: white;
+  #allControls {
+    color: black;
+  }
+  .fa-home-alt,
+  .fa-cog,
+  .fa-sun,
+  .fa-bell,
+  .dark-mode {
+    color: black;
+  }
+  .activate {
+    color: rgb(252, 5, 170);
+  }
+  .Alerts:hover {
+    background: rgb(212, 201, 201);
+  }
+}
+
+//  information screen setting start
+
+.TIMER {
+  position: relative;
+  width: 100%;
+}
+
+.ALARM-SETTINGS {
+  position: relative;
+  width: 100%;
+  padding: 4px;
+}
+
+.timer-info {
+  font-size: 20em;
+  text-align: center;
+}
+
+.Alerts {
+  text-align: center;
+  cursor: pointer;
+}
+
+.scroll {
+  position: relative;
+  left: 48%;
+  margin: 50px 0px 50px 0px;
+  background: transparent;
+  border: none;
+
+  i {
+    color: rgb(90, 55, 247);
+    font-size: 4rem;
+    pointer-events: none;
+    border-radius: 50%;
+    padding: 0px 4px 0px 4px;
+  }
+}
+
+.scroll:hover i {
+  background: rgb(207, 207, 207);
+}
+
+.status {
+  text-align: center;
+  font-size: 3rem;
+  padding: 20px;
+  position: relative;
+  top: 25px;
+}
+
+//  information screen setting end
+
+// control setting start
+
+#allControls {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  display: flex;
+  top: 84%;
+  justify-content: space-around;
+  height: 100px;
+  span {
+    font-size: 2rem;
+    padding: 15px;
+  }
+  p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+#Three-Control-Btn {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+#beep,
+#set,
+#view {
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  padding-top: 6px;
+  i {
+    font-size: 2.5rem;
+  }
+  margin: 18px;
+}
+
+#setting {
+  display: flex;
+  justify-content: space-between;
+}
+
+.start-btn {
+  background: transparent;
+  padding: 4px;
+  margin: 18px;
+  border: none;
+  border-radius: 50%;
+  i {
+    color: rgb(37, 210, 223);
+    font-size: 2.5rem;
+  }
+}
+
+.start-btn:hover i {
+  color: rgb(37, 210, 223);
+  box-shadow: 0px 0px 2px 2px rgb(37, 210, 223);
+  border-radius: 50%;
+}
+
+.reset-btn {
+  padding: 4px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 18px;
+  border: none;
+  background: transparent;
+  i {
+    color: rgb(0, 146, 0);
+    font-size: 2.5rem;
+  }
+}
+
+.anim1 {
+  animation: round 0.5s ease 1;
+}
+
+@keyframes round {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.anim2 {
+  animation: reverse-round 0.5s ease 1;
+}
+
+@keyframes reverse-round {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.reset-btn:hover i {
+  color: aqua;
+}
+
+.Arrow-Btn {
+  border: none;
+  padding: 0px;
+  background: transparent;
+
+  i {
+    color: rgb(6, 121, 197);
+    pointer-events: none;
+    font-size: 2.5rem;
+  }
+}
+
+.Arrow-Btn:hover i {
+  color: rgb(5, 197, 5);
+  box-shadow: 0px 0px 2px 2px rgb(5, 197, 5);
+  border-radius: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline;
+}
+
+.Break,
+.Session {
+  padding: 0px;
+  display: inline;
+  #Break-control {
+    text-align: center;
+  }
+  width: 180px;
+  #Session-control {
+    text-align: center;
+  }
+}
+
+// control setting end>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+// loading animation >>>>>>>>>>>>>
+
+.loader {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  position: relative;
+  background-color: #FFF;
+  background: radial-gradient(ellipse at center, #FF3D00 0%, #FF3D00 14%, #FFF 15%, #FFF 100%);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  position: absolute;
+  height: 15px;
+  width: 4px;
+  background: #FF3D00;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: 25% 0;
+  box-sizing: border-box;
+  animation: rotation 10s linear infinite;
+}
+.loader::before {
+  height: 18px;
+  width: 2px;
+  transform: translateX(-50%) rotate(0deg);
+  animation-duration: 3s;
+} 
+@keyframes rotation {
+  0%    { transform: rotate(0deg)}
+  100%  { transform: rotate(360deg)}
+} 
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+// media quaries 1024px,800px,630px,500px
+
+
+@media (max-width: 1024px) {
+  .timer-info {
+    font-size: 15em;
+  }
+
+  #allControls {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    top: 83%;
+  }
+
+  .status {
+    font-size: 2.5rem;
+  }
+  .scroll {
+    position: relative;
+    left: 46.5%;
+  }
+}
+
+ 
+@media (max-width: 800px) {
+  .timer-info {
+    font-size: 15em;
+  }
+
+  #allControls {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    top: 83%;
+  }
+
+  .scroll {
+    position: relative;
+    left: 46%;
+  }
+}
+
+@media (max-width: 630px) {
+  .timer-info {
+    font-size: 10em;
+  }
+  .status {
+    font-size: 2rem;
+    padding: 10px;
+    position: relative;
+    top: 0px;
+  }
+
+  .TIMER {
+    position: relative;
+    top: 5%;
+  }
+
+  .ALARM-SETTINGS {
+    position: relative;
+    width: 100%;
+    padding: 4px; 
+  }
+
+  #allControls {
+    position: absolute;
+    left: 5%;
+    top: 52%;
+    width: 90%;
+    display: grid;
+    padding: 5px;
+    justify-items: center;
+    align-items: flex-end;
+    height: 48%;
+
+    span {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
+
+  .scroll {
+    position: relative;
+    left: 44%;
+    margin: 25px 0px 25px 0px;
+    i {
+      font-size: 4rem;
+      padding: 0px 4px 0px 4px;
+    }
+  }
+
+  .Arrow-Btn {
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  #Three-Control-Btn {
+    grid-area: 3/1/4/2;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    height: 80px;
+  }
+
+  .Session {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .timer-info {
+    font-size: 8em;
+  }
+  .status {
+    font-size: 1.3rem;
+    padding: 10px 0px 10px 0px;
+  }
+
+  .TIMER {
+    position: relative;
+    top: 3%;
+  }
+
+  .ALARM-SETTINGS {
+    position: relative;
+    width: 100%;
+    padding: 4px;
+  }
+
+  #allControls {
+    position: absolute;
+    left: 5%;
+    top: 53%;
+    width: 90%;
+    display: grid;
+    padding: 5px;
+    justify-items: center;
+    align-items: flex-end;
+    height: 45%;
+
+    span {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .scroll {
+    position: relative;
+    left: 41.5%;
+    margin: 25px 0px 25px 0px;
+    i {
+      font-size: 3.5rem;
+      padding: 0px 4px 0px 4px;
+    }
+  }
+
+  .Arrow-Btn {
+    i {
+      font-size: 1.9rem;
+    }
+  }
+
+  #Three-Control-Btn {
+    grid-area: 3/1/4/2;
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .Session {
+    margin-top: -10px;
+  }
+}
